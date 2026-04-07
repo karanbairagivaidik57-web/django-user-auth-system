@@ -44,7 +44,7 @@ A robust and secure User Authentication System built with **Django** and **MySQL
     ```
 
 ## 🌐 Live Demo
-The project is deployed on Render: [Your Render Link Here]
+The project is deployed on Render:[https://django-auth-karan.onrender.com]
 
 ## 👨‍💻 Author
 **Karan Bairagi**
