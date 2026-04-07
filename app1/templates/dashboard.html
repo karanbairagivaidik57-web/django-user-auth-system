@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karan's Web App | Dashboard</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dashboard-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+            border-top: 5px solid #007bff;
+            position: relative; /* Added for developer tag position */
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            background-color: #007bff;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            line-height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            text-transform: uppercase;
+        }
+
+        h2 { color: #333; margin-bottom: 10px; font-size: 26px; }
+        .user-id { color: #888; font-size: 13px; margin-bottom: 25px; }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+        }
+        .info-label { color: #666; font-weight: 600; }
+        .info-value { color: #333; }
+
+        .logout-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .logout-btn:hover { background-color: #a71d2a; transform: scale(1.05); }
+
+        /* --- NEW DEVELOPER TAG CSS --- */
+        .dev-tag {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed #ccc;
+            font-size: 12px;
+            color: #777;
+        }
+        .dev-name {
+            color: #007bff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 480px) {
+            .dashboard-container {
+                width: 90%; 
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <div class="profile-pic">
+        {{ user_id.username|slice:":1" }}
+    </div>
+
+    <h2>Welcome, {{ user_id.username }}!</h2>
+    <p class="user-id">User ID: #{{ user_id.id }}</p>
+
+    <div class="info-row">
+        <span class="info-label">Email Address:</span>
+        <span class="info-value">{{ user_id.email }}</span>
+    </div>
+
+    <div class="info-row">
+        <span class="info-label">Mobile Number:</span>
+        <span class="info-value">{{ user_id.mobile }}</span>
+    </div>
+
+    <div class="info-row" style="border: none;">
+        <span class="info-label">Account Status:</span>
+        <span class="info-value" style="color: #28a745; font-weight: bold;">Active</span>
+    </div>
+
+    <a href="{% url 'login' %}" class="logout-btn">Logout</a>
+
+    <!-- --- KARAN BAIRAGI PROOF TAG --- -->
+    <div class="dev-tag">
+        Designed & Developed by <br>
+        <span class="dev-name">Karan Bairagi</span>
+    </div>
+</div>
+
+</body>
+</html>
